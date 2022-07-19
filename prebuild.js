@@ -160,3 +160,16 @@ res = 'export class Data\n{\n' + res + '\n}';
 fs.writeFileSync(target, res);
 
 console.log('-> configs parsed...');
+
+//----- variables ------
+
+const variables = 'var showhelp_var = "%task%_showhelp";\nvar completed_var = "%task%_completed";\nvar store_var = "%task%_store";';
+target = './src/variables.js';
+
+var parts = process.cwd().split('\\');
+var task = parts[parts.length - 1];
+var res = variables.split('%task%').join(task);
+
+fs.writeFileSync(target, res);
+
+console.log('-> variables created...');

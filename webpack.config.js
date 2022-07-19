@@ -12,7 +12,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, './build'),
-		filename: 'bundle.js',
+		filename: './libs/bundle.js',
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
@@ -22,14 +22,19 @@ module.exports = {
 			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
+			},
+			{
+				test: path.resolve(__dirname, './src/variables.js'),
+				loader: 'ts-loader',
+				exclude: path.resolve(__dirname, './src/variables.js'),
 			}
 		]
     },
 	//devtool: 'inline-source-map',
 	performance: {
 		hints: false,
-		maxEntrypointSize: 512000,
-		maxAssetSize: 512000
+		maxEntrypointSize: 5120000,
+		maxAssetSize: 5120000
 	},
 	devServer: {
 		historyApiFallback: true,
@@ -72,9 +77,15 @@ module.exports = {
 					context: path.resolve(__dirname, './data/sounds'),
 					to: './data/sounds',
 					noErrorOnMissing: true,
+				},
+				{
+					from: 'variables.js',
+					context: path.resolve(__dirname, './src'),
+					to: 'variables.js',
+					noErrorOnMissing: true,
+					info: { minimized: true },
 				}
 			],
 		})
-	],
-	
+	]	
 }

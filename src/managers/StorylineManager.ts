@@ -45,10 +45,16 @@ export class StorylineManager {
 		console.log(variable, 'set to value:', value);
 	}
 
-	public getVar = (variable: string) => {
+	public getVar = ( variable: string ): string => {
 		let value: any = null;
 		if (this.player != null) value = this.player.GetVar(variable);
 		console.log(variable, 'get value:', value);
 		return value;
+	}
+
+	public getTaskVar = ( variable: string ): string => {
+		
+		return window[ variable ];
+		
 	}
 }
