@@ -1,0 +1,1 @@
+export class CompilationParams { public static COMPILATION_DATE: string = "19.07.2022 18:54:29 UTC"; }
