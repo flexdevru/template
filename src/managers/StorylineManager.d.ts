@@ -8,5 +8,9 @@ export declare class StorylineManager {
     goNext: () => void;
     goNextSlide: () => void;
     setVar: (variable: string, value?: any) => void;
-    getVar: (variable: string) => any;
+    getVar: (variable: string) => string;
+    getTaskVar: (variable: string) => string;
+    getTaskShowHelpVar: () => string;
+    getTaskCompletedVar: () => string;
+    getTaskStoreVar: () => string;
 }

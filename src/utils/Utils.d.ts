@@ -90,8 +90,6 @@ export declare class SaveImage {
     saveCanvas: (canvas: HTMLCanvasElement, fileName: string) => void;
     private onImageLoad;
     private saveData;
-    saveCanvasToPDF: (canvas: HTMLCanvasElement, fileName: string) => void;
-    saveToPDF: (source: PIXI.DisplayObject, fileName: string) => void;
 }
 export declare var rgba_create: (color: number, alpha?: number) => string;
 export declare function parse_point(value: string): PIXI.Point;

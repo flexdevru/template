@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import { Application } from '../Application';
-import { jsPDF } from "jspdf";
+//import { jsPDF } from "jspdf";
 //---------- Point ----------
 
 export class Point {
@@ -565,11 +565,12 @@ export class SaveImage {
 		a.click();
 		window.URL.revokeObjectURL(url);
 	}
-
+/*
 	public saveCanvasToPDF = (canvas: HTMLCanvasElement, fileName: string) => {
 		console.log('canvas', canvas.width, canvas.height);
 		this.fileName = fileName;
-		let pdf = new jsPDF({ orientation: 'l', unit: 'px', format: [canvas.width, canvas.height] });
+		
+		let pdf = new jsPDF({orientation: 'l', unit: 'px', format: [canvas.width, canvas.height]});
 		pdf.addImage(canvas, 'PNG', 0, 0, canvas.width, canvas.height);
 		pdf.save(this.fileName);
 	}
@@ -583,6 +584,7 @@ export class SaveImage {
 		pdf.addImage(canvas, 'PNG', 0, 0, canvas.width, canvas.height);
 		pdf.save(this.fileName);
 	}
+	*/
 }
 
 export var rgba_create = function (color: number, alpha: number = 1): string {

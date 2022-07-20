@@ -55,6 +55,20 @@ export class StorylineManager {
 	public getTaskVar = ( variable: string ): string => {
 		
 		return window[ variable ];
-		
+	}
+
+	public getTaskShowHelpVar = (): string => {
+
+		return this.getTaskVar('showhelp_var');
+	}
+
+	public getTaskCompletedVar = (): string => {
+
+		return this.getTaskVar('completed_var');
+	}
+
+	public getTaskStoreVar = (): string => {
+
+		return this.getTaskVar('completed_var');
 	}
 }
